@@ -1,0 +1,65 @@
+/* 全局设置 */
+body {
+	background-color: #eeeeee;
+	overflow-x: hidden;
+}
+/* 导航栏设定 */
+.navbar {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+@media (min-width: 768px) {
+	.navbar {
+	  top: 15px;
+	  left: 15%;
+	  width: 70%;
+	  position: absolute;
+	  border-radius: 5px;
+	}	
+}
+@media (min-width: 992px) {
+	.navbar {
+	  top: 15px;
+	  left: 10%;
+	  width: 80%;
+	  position: absolute;
+	  border-radius: 5px;
+	}	
+}
+
+/* 滚动条设定 */
+.carousel {
+  height: 400px;
+  margin-bottom: 60px;
+}
+
+.carousel .item {
+  height: 400px;
+}
+.carousel-inner > .item > img {
+  min-width: 100%;
+  height: 400px;
+}
+/* 菜单设定 */
+.row {
+	padding: 10px;
+}
+.col-md-5 > img {
+	width: 500px;
+	height: 500px;
+}
+.col-md-5 > h2 {
+	margin-top: 30%;
+}
+/* 分割线设定 */
+.featurette-divider {
+	border: 0;
+	background-color: #e0e0e0;
+	height: 1px;
+	width: 80%;
+}
+/* footer设定 */
+address {
+	margin-bottom: 0; 
+}
