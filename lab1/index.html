@@ -12,11 +12,12 @@
     <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/index.js"></script>
 </head>
 
 <body>
-    <!-- 导航条 -->
+    <!-- nav导航条 -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -31,9 +32,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="music.html">Music</a></li>
-                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a id="navHome" href="#" onclick="changePage(this)">Home</a></li>
+                    <li><a id="navMenu" href="#" onclick="changePage(this)">Menu</a></li>
+                    <li><a href="#" onclick="changePage(this)">Music</a></li>
+                    <li><a href="#" onclick="changePage(this)">Jobs</a></li>
                 </ul>
             </div>
         </div>
@@ -91,7 +93,8 @@
         </a>
     </div>
     <!-- main -->
-    <main id="myMain" class="container-fluid">
+    <!-- home -->
+    <main id="mainHome" class="container-fluid">
         <div class="row featurette">
             <div class="col-md-1"></div>
             <div class="col-md-5">
@@ -136,8 +139,377 @@
             </div>
             <div class="col-md-1"></div>
         </div>
+        <hr class="featurette-divider">
     </main>
-    <hr class="featurette-divider">
+    <!-- menu -->
+    <main id="mainMenu" class="container-fluid">
+        <!-- coffee -->
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2 class="featurette-heading">Coffee</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee1.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">浓缩咖啡（热/冷）</h3>
+                            <p class="text-center">这是咖啡的精粹，以浓缩的方式显现。星巴克浓缩咖啡带点焦糖味道，浓厚馥郁。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee2.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">美式咖啡（热/冷）</h3>
+                            <p class="text-center">尽管名为美式咖啡，但此款饮料却是一种地道的欧式咖啡制作方法：即将热水和浓缩咖啡的巧妙调和。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee3.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">卡布奇诺（热/冷）</h3>
+                            <p class="text-center">星级咖啡师手工调制，三分之一浓缩咖啡，三分之一新鲜蒸奶，三分之一细腻奶泡。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee4.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">拿铁（热/冷）</h3>
+                            <p class="text-center">这是一种传统的经典饮料——浓缩咖啡调入热牛奶，其上覆盖一层轻盈的奶沫。品尝此款咖啡时，您可以选择特别加入某种口味（如香草，焦糖或杏仁口味）的糖浆。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee5.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">香草风味拿铁（热/冷）</h3>
+                            <p class="text-center">开启拿铁的香草浪漫之旅。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee6.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">焦糖玛奇朵</h3>
+                            <p class="text-center">这是星巴克的独特饮品，在蒸奶中加入浓缩咖啡和香草糖浆，然后覆盖上一层风格独特的焦糖图案，口味香甜，像丝般顺滑，风味醇厚。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee7.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">摩卡（热/冷）</h3>
+                            <p class="text-center">这款咖啡由醇香的摩卡酱，浓缩咖啡和蒸奶相融相合，上面覆以搅打奶油。寒冷的日子里，忧伤的时光中,任何人都无法抵抗她的诱惑。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee8.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">榛果风味拿铁（热/冷）</h3>
+                            <p class="text-center">榛果风味的芬芳弥漫于拿铁的醇香，温暖美好。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee9.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">星巴克馥芮白（热/冷）</h3>
+                            <p class="text-center">这是咖啡的精粹，以浓缩的方式显现。星巴克浓缩咖啡带点焦糖味道，浓厚馥郁。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/coffee10.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">浓郁咖啡摩卡（热/冷）</h3>
+                            <p class="text-center">让摩卡多一份浓缩咖啡，更添浓厚馥郁。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <hr class="featurette-divider">
+        <!-- tea -->
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2 class="featurette-heading">Tea</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/tea1.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">冰摇桃桃绿茶/冰摇桃桃乌龙茶</h3>
+                            <p class="text-center">含有原榨桃汁与吃得到的大颗白桃果肉，看得到也吃得到的清爽美味！</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/tea2.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">冰摇柚柚蜂蜜红茶</h3>
+                            <p class="text-center">韩国柚子的清香、以色列进口柚汁的甘甜，及美国粉柚汁丰富的果香，融于这精致的一杯。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/tea3.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">抹茶拿铁（热/冷）</h3>
+                            <p class="text-center">这是一款优质抹茶粉与新鲜蒸奶、细腻奶泡完美融合的饮料，清香、微甜。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/tea4.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">红茶拿铁（热/冷）</h3>
+                            <p class="text-center">将原叶红茶与新鲜蒸奶和细致奶泡充分融合，层次丰富，绵密顺滑，充分展现茶拿铁的美味。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/tea5.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">冰摇红莓黑加仑茶</h3>
+                            <p class="text-center">混合多种新鲜果汁，清甜酸爽，果香浓郁。</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <hr class="featurette-divider">
+        <!-- food -->
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2 class="featurette-heading">Food</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/food1.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">蓝莓麦芬</h3>
+                            <p class="text-center">顶层口感酥脆，内部松软</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/food2.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">巧克力麦芬</h3>
+                            <p class="text-center">巧克力豆质感细腻</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/food3.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">蓝莓丹麦酥</h3>
+                            <p class="text-center">甄选进口高品质黄油制作</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/food4.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">蜜提司康</h3>
+                            <p class="text-center">松软酥脆、有明显黄油香气</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/food5.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">火鸡烟熏火腿烧烤酱三明治</h3>
+                            <p class="text-center">法式面包外脆里嫩，鲜香可口</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/food6.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">抹茶红豆芝士蛋糕</h3>
+                            <p class="text-center">抹茶粉清香怡人</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/food7.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">经典提拉米苏</h3>
+                            <p class="text-center">正宗意式配方</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img class="img-circle" src="image/food8.jpg" alt="...">
+                        <div class="caption">
+                            <h3 class="text-center">太妃榛果牛轧糖</h3>
+                            <p class="text-center">富有嚼劲的榛果风味牛轧糖</p>
+                            <!-- <p class="text-center">
+                                <a href="#" class="btn btn-primary" role="button" width="">Order</a>
+                                <a href="#" class="btn btn-default" role="button">Details</a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1"></div>
+        </div>
+        <hr class="featurette-divider">
+    </main>
+    <!-- footer -->
     <footer id="myFooter">
         <address class="text-center">
             <strong>
@@ -145,10 +517,12 @@
                 Mountain Home, CA 93923<br>
             </strong>
             <abbr title="Phone">P:</abbr>
-            1-888-555-5555<br>
+            1-888-555-5555
+            <br>
         </address>
         <p class="text-center">
-            <i>Copyright &copy; 2013 JavaJam Coffee House</i><br>
+            <i>Copyright &copy; 2013 JavaJam Coffee House</i>
+            <br>
             <a href="mailto:123@qq.com">123@qq.com</a>
         </p>
     </footer>

@@ -1,5 +1,9 @@
 /* 全局设置 */
+html {
+	height: 100%;
+}
 body {
+	height: 100%;
 	background-color: #eeeeee;
 	overflow-x: hidden;
 }
@@ -30,27 +34,35 @@ body {
 
 /* 滚动条设定 */
 .carousel {
-  height: 400px;
-  margin-bottom: 60px;
+  height: 40%;
+  margin-bottom: 10px;
+}
+.carousel-inner {
+	height: 100%;
 }
 
 .carousel .item {
-  height: 400px;
+  height: 100%;
 }
 .carousel-inner > .item > img {
   min-width: 100%;
-  height: 400px;
+  height: 100%;
 }
-/* 菜单设定 */
+/* home设定 */
 .row {
 	padding: 10px;
+	/*height: 100%;*/
+}
+.col-md-5 {
+	padding: 3%;
+	height: 100%;
 }
 .col-md-5 > img {
-	width: 500px;
-	height: 500px;
+	width: 100%;
+	height: 100%;
 }
 .col-md-5 > h2 {
-	margin-top: 30%;
+	height: 50%;
 }
 /* 分割线设定 */
 .featurette-divider {
@@ -59,7 +71,26 @@ body {
 	height: 1px;
 	width: 80%;
 }
+
+/* menu设定 */
+.thumbnail {
+	background-color: #eeeeee; 
+	height: auto;
+    border: 0;
+}
+.text-center > a {
+	margin: 2%;
+}
+
 /* footer设定 */
 address {
 	margin-bottom: 0; 
+}
+/* 控制页面显示 */
+#mainHome {
+	/*display: none;*/
+	display: inline;
+}
+#mainMenu {
+	display: none;
 }
