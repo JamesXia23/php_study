@@ -82,6 +82,12 @@ body {
 	margin: 2%;
 }
 
+/* music设定 */
+.caption > audio {
+    width: 100%;
+    height: 32px;
+}
+
 /* footer设定 */
 address {
 	margin-bottom: 0; 
