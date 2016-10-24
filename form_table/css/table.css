@@ -1,0 +1,28 @@
+/* common setting */
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	background-color: #eeeeee;
+	overflow-x: hidden;
+}
+
+/* table */
+table {
+	height: 500px;
+}
+
+table > caption{
+	font-size: 3em;
+	color: black;
+}
+
+table > thead > first-of-type > th{
+	text-align: center;
+}
+
+#info {
+	font-size: 2em;
+	text-align: center;
+}
