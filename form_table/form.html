@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Student Info</title>
+    <!-- Bootstrap -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="css/form.css" rel="stylesheet">
+</head>
+
+<body>
+    <form action="#" method="post" role="form" class="form-horizontal">
+        <div class="row">
+            <div class="col-sm-1 col-xs-1"></div>
+            <fieldset id="academic" class="col-sm-10 col-xs-10">
+                <legend>Academic information</legend>
+                <!-- degree -->
+                <div class="form-group row">
+                    <label for="degree" class="col-sm-2 control-label">Degree:</label>
+                    <div class="col-sm-9">
+                        <select name="degree" id="degree" class="form-control">
+                            <option value="masterOfBusinessAdministration">Master of Business Administration</option>
+                            <option value="doctorOfSoftwareEngineering" selected="selected">Doctor of Software Engineering</option>
+                            <option value="PhdInEconomics">Ph.D. in Economics</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+                <!-- ID -->
+                <div class="form-group row">
+                    <label for="ID" class="col-sm-2 control-label">Student ID:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="ID" class="form-control" placeholder="please input your SID" pattern="[0-9]{10}" title="example:2013150391">
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- class attended -->
+                <div class="form-group row">
+                    <label for="attend" class="col-sm-2 col-xs-2 control-label">Classes attended:</label>
+                    <div id="attend" class="col-sm-9 col-xs-9">
+                        <input type="checkbox" name="attend" value="geography">Geography
+                        <br>
+                        <input type="checkbox" name="attend" value="mathematics">Mathematics
+                        <br>
+                        <input type="checkbox" name="attend" value="english">English
+                        <br>
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+            </fieldset>
+            <div class="col-sm-1 col-xs-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-xs-1"></div>
+            <fieldset id="personal" class="col-sm-10 col-xs-10">
+                <legend>Personal Details</legend>
+                <!-- First Name -->
+                <div class="form-group row">
+                    <label for="fName" class="col-sm-2 col-xs-2 control-label">First Name:</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input type="text" class="form-control" id="fName" placeholder="please input your First Name" pattern="[A-z]+" title="not more than 25 characters">
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- Last Name -->
+                <div class="form-group row">
+                    <label for="lName" class="col-sm-2 col-xs-2 control-label">Last Name:</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input type="text" class="form-control" id="lName" placeholder="please input your Last Name" pattern="[A-z]+" title="not more than 25 characters">
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- Gender -->
+                <div class="form-group row">
+                    <label for="gender" class="col-sm-2 col-xs-2 control-label">Gender:</label>
+                    <div id="gender" class="col-sm-9 col-xs-9">
+                        <input type="radio" name="gender" value="male">male
+                        <br>
+                        <input type="radio" name="gender" value="female" checked="checked">female
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- height -->
+                <div class="form-group row">
+                    <label for="height" class="col-sm-2 col-xs-2 control-label">Height:</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input type="number" name="height" class="form-control" id="height" min="140" max="200" />
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- Birthday -->
+                <div class="form-group row">
+                    <label for="birthday" class="col-sm-2 col-xs-2 control-label">Birthday:</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- Tel -->
+                <div class="form-group row">
+                    <label for="tel" class="col-sm-2 col-xs-2 control-label">Tel:</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input type="tel" id="tel" class="form-control" placeholder="please input your tel">
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- Email -->
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-xs-2 control-label">Email:</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input type="email" id="email" class="form-control" placeholder="please input your email">
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- color -->
+                <div class="form-group row">
+                    <label for="color" class="col-sm-2 col-xs-2 control-label">Favortie Color:</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <input type="color">
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <!-- introduction -->
+                <div class="form-group row">
+                    <label for="introduction" class="col-sm-2 col-xs-2 control-label">Personal Introduction:</label>
+                    <div class="col-sm-9 col-xs-9">
+                        <textarea name="introduction" id="introduction" class="form-control" rows="10" placeholder="please introduction yourself"></textarea>
+                    </div>
+                    <div class="col-sm-1 col-xs-1"></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-offset-2 col-xs-offset-2 col-sm-9 col-xs-9">
+                        <button type="submit" class="btn btn-default">Send</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="col-sm-1 col-xs-1"></div>
+        </div>
+    </form>
+</body>
+
+</html>
