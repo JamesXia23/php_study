@@ -1,0 +1,556 @@
+    body {
+        margin: 0;
+        padding: 0;
+        background: url(../images/universe.jpg) no-repeat 0 0;
+        background-size: 100%;
+        overflow-x: hidden;
+    }
+    
+    span {
+        display: block
+    }
+    
+    .planet {
+        /*位置对齐*/
+        position: absolute;
+        margin: auto;
+        left: 45%;
+        right: 0;
+        margin-top: 300px;
+        /*overflow: auto;*/
+    }
+    
+    .sun {
+        /*位置对齐*/
+        position: absolute;
+        margin: auto;
+        margin-top: 370px;
+        left: 0;
+        right: 25px;
+        overflow: auto;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        position: absolute;
+        /*背景*/
+        background: url(../images/sun.jpg) no-repeat 0 0;
+        background-size: cover;
+        background-position: -4px 0;
+    }
+
+    
+    .planet_trajectory {
+        border: 1px solid #C1BDB1;
+        position: relative;
+    }
+    
+    .planet_trajectory div {
+        position: absolute;
+        transform-origin: 0px 0px;
+        -webkit-transform-origin: 0px 0px;
+        -moz-transform-origin: 0px 0px;
+        -o-transform-origin: 0px 0px;
+    }
+    
+    .planet_trajectory div p {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .planet_trajectory div p span {
+        position: absolute
+    }
+    
+    .planet_mercury {
+        width: 160px;
+        height: 160px;
+        top: 20px;
+        left: 20px
+    }
+    
+    .mercury {
+        width: 160px;
+        height: 160px;
+        border-radius: 80px;
+        transform: skew(10deg, 0deg) rotateX(-60deg);
+        -webkit-transform: skew(10deg, 0deg) rotateX(-60deg);
+        -moz-transform: skew(10deg, 0deg) rotateX(-60deg);
+        -o-transform: skew(10deg, 0deg) rotateX(-60deg);
+    }
+    
+    .mercury div {
+        width: 80px;
+        height: 1px;
+        top: 80px;
+        left: 80px;
+        animation: mercury_revolve 5s infinite linear;
+        -webkit-animation: mercury_revolve 5s infinite linear;
+        -moz-animation: mercury_revolve 5s infinite linear;
+        -o-animation: mercury_revolve 5s infinite linear;
+    }
+    
+    .mercury div p span {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        
+        background: url(../images/mercury.jpg) repeat-x 0 0;
+    	background-size: 200%;
+    	box-shadow: 0px 0px 35px rgba(256, 256, 256, 0.3), -1px -2px 14px rgba(256, 256, 256, 0.5) inset;
+    	background-position: -15px 0;
+
+        top: -10px;
+        right: -10px;
+        animation: nudge 20s infinite linear;
+        -webkit-animation: nudge 20s infinite linear;
+        -moz-animation: nudge 20s infinite linear;
+        -o-animation: nudge 20s infinite linear;
+    }
+    
+    .planet_venus {
+        width: 240px;
+        height: 240px;
+        top: -12px;
+        left: -12px
+    }
+    
+    .venus {
+        width: 240px;
+        height: 240px;
+        border-radius: 120px;
+        transform: skew(15deg, 0deg) rotateX(-60deg);
+        -webkit-transform: skew(15deg, 0deg) rotateX(-60deg);
+        -moz-transform: skew(15deg, 0deg) rotateX(-60deg);
+        -o-transform: skew(15deg, 0deg) rotateX(-60deg);
+    }
+    
+    .venus div {
+        width: 120px;
+        height: 1px;
+        top: 120px;
+        left: 120px;
+        animation: venus_revolve 8s infinite linear;
+        -webkit-animation: venus_revolve 8s infinite linear;
+        -moz-animation: venus_revolve 8s infinite linear;
+        -o-animation: venus_revolve 8s infinite linear;
+    }
+    
+    .venus div p span {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background: url(../images/venus.jpg) repeat-x 0 0;
+    	background-size: 200%;
+    	box-shadow: 0px 0px 35px rgba(256, 256, 256, 0.3), -1px -2px 14px rgba(256, 256, 256, 0.5) inset;
+    	background-position: -15px 0;
+
+        top: -10px;
+        right: -10px;
+        animation: nudge 20s infinite linear;
+        -webkit-animation: nudge 20s infinite linear;
+        -moz-animation: nudge 20s infinite linear;
+        -o-animation: nudge 20s infinite linear;
+    }
+    
+    .planet_earth {
+        width: 300px;
+        height: 300px;
+        top: -38px;
+        left: -38px
+    }
+    
+    .earth {
+        width: 300px;
+        height: 300px;
+        border-radius: 150px;
+        transform: skew(20deg, 0deg) rotateX(60deg);
+        -webkit-transform: skew(20deg, 0deg) rotateX(60deg);
+        -moz-transform: skew(20deg, 0deg) rotateX(60deg);
+        -o-transform: skew(20deg, 0deg) rotateX(60deg);
+    }
+    
+    .earth div {
+        width: 150px;
+        height: 1px;
+        top: 150px;
+        left: 150px;
+        animation: earth_revolve 11s infinite linear;
+        -webkit-animation: earth_revolve 11s infinite linear;
+        -moz-animation: earth_revolve 11s infinite linear;
+        -o-animation: earth_revolve 11s infinite linear;
+    }
+    
+    .earth div p span {
+        width: 28px;
+        height: 28px;
+        border-radius: 14px;
+        background: url(../images/earth.jpg) repeat-x 0 0;
+    	background-size: 200%;
+    	box-shadow: 0px 0px 35px rgba(256, 256, 256, 0.3), -1px -2px 14px rgba(256, 256, 256, 0.5) inset;
+
+        top: -14px;
+        right: -14px;
+        animation: nudge 20s infinite linear;
+        -webkit-animation: nudge 20s infinite linear;
+        -moz-animation: nudge 20s infinite linear;
+        -o-animation: nudge 20s infinite linear;
+    }
+    
+    .planet_mars {
+        width: 400px;
+        height: 400px;
+        top: -78px;
+        left: -78px
+    }
+    
+    .mars {
+        width: 400px;
+        height: 400px;
+        border-radius: 200px;
+        transform: skew(25deg, 0deg) rotateX(60deg);
+        -webkit-transform: skew(25deg, 0deg) rotateX(60deg);
+        -moz-transform: skew(25deg, 0deg) rotateX(60deg);
+        -o-transform: skew(25deg, 0deg) rotateX(60deg);
+    }
+    
+    .mars div {
+        width: 200px;
+        height: 1px;
+        top: 200px;
+        left: 200px;
+        animation: mars_revolve 14s infinite linear;
+        -webkit-animation: mars_revolve 14s infinite linear;
+        -moz-animation: mars_revolve 14s infinite linear;
+        -o-animation: mars_revolve 14s infinite linear;
+    }
+    
+    .mars div p span {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background: url(../images/mars.jpg) repeat-x 0 0;
+    	background-size: 200%;
+    	box-shadow: 0px 0px 35px rgba(256, 256, 256, 0.3), -1px -2px 14px rgba(256, 256, 256, 0.5) inset;
+        top: -10px;
+        right: -10px;
+        animation: nudge 20s infinite linear;
+        -webkit-animation: nudge 20s infinite linear;
+        -moz-animation: nudge 20s infinite linear;
+        -o-animation: nudge 20s infinite linear;
+    }
+    
+    .planet_jupiter {
+        width: 500px;
+        height: 500px;
+        top: -114px;
+        left: -114px
+    }
+    
+    .jupiter {
+        width: 500px;
+        height: 500px;
+        border-radius: 250px;
+        transform: skew(25deg, -30deg) rotateX(60deg);
+        -webkit-transform: skew(25deg, -30deg) rotateX(60deg);
+        -moz-transform: skew(25deg, -30deg) rotateX(60deg);
+        -o-transform: skew(25deg, -30deg) rotateX(60deg);
+    }
+    
+    .jupiter div {
+        width: 250px;
+        height: 1px;
+        top: 250px;
+        left: 250px;
+        animation: jupiter_revolve 17s infinite linear;
+        -webkit-animation: jupiter_revolve 17s infinite linear;
+        -moz-animation: jupiter_revolve 17s infinite linear;
+        -o-animation: jupiter_revolve 17s infinite linear;
+    }
+    
+    .jupiter div p span {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background: url(../images/mars.jpg) repeat-x 0 0;
+    	background-size: 200%;
+    	box-shadow: 0px 0px 35px rgba(256, 256, 256, 0.3), -1px -2px 14px rgba(256, 256, 256, 0.5) inset;
+        top: -20px;
+        right: -20px;
+        animation: nudge 20s infinite linear;
+        -webkit-animation: nudge 20s infinite linear;
+        -moz-animation: nudge 20s infinite linear;
+        -o-animation: nudge 20s infinite linear;
+    }
+    
+    .planet_saturn {
+        width: 600px;
+        height: 600px;
+        top: -160px;
+        left: -160px
+    }
+    
+    .saturn {
+        width: 600px;
+        height: 600px;
+        border-radius: 300px;
+        transform: skew(25deg, 0deg) rotateX(60deg);
+        -webkit-transform: skew(25deg, 0deg) rotateX(60deg);
+        -moz-transform: skew(25deg, 0deg) rotateX(60deg);
+        -o-transform: skew(25deg, 0deg) rotateX(60deg);
+    }
+    
+    .saturn div {
+        width: 300px;
+        height: 1px;
+        top: 300px;
+        left: 300px;
+        animation: saturn_revolve 20s infinite linear;
+        -webkit-animation: saturn_revolve 20s infinite linear;
+        -moz-animation: saturn_revolve 20s infinite linear;
+        -o-animation: saturn_revolve 20s infinite linear;
+    }
+    
+    .saturn div p span {
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+        background: url(../images/saturn.jpg) repeat-x 0 0;
+    	background-size: 200%;
+    	box-shadow: 0px 0px 35px rgba(256, 256, 256, 0.3), -1px -2px 14px rgba(256, 256, 256, 0.5) inset;
+        top: -12px;
+        right: -12px;
+        animation: nudge 20s infinite linear;
+        -webkit-animation: nudge 20s infinite linear;
+        -moz-animation: nudge 20s infinite linear;
+        -o-animation: nudge 20s infinite linear;
+    }
+    
+    .planet_uranus {
+        width: 700px;
+        height: 700px;
+        top: -202px;
+        left: -202px
+    }
+    
+    .uranus {
+        width: 700px;
+        height: 700px;
+        border-radius: 350px;
+        transform: skew(64deg, 0deg) rotateX(68deg);
+        -webkit-transform: skew(64deg, 0deg) rotateX(68deg);
+        -moz-transform: skew(64deg, 0deg) rotateX(68deg);
+        -o-transform: skew(64deg, 0deg) rotateX(68deg);
+    }
+    
+    .uranus div {
+        width: 350px;
+        height: 1px;
+        top: 350px;
+        left: 350px;
+        animation: uranus_revolve 23s infinite linear;
+        -webkit-animation: uranus_revolve 23s infinite linear;
+        -moz-animation: uranus_revolve 23s infinite linear;
+        -o-animation: uranus_revolve 23s infinite linear;
+    }
+    
+    .uranus div p span {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background: url(../images/uranus.jpg) repeat-x 0 0;
+    	background-size: 200%;
+    	box-shadow: 0px 0px 35px rgba(256, 256, 256, 0.3), -1px -2px 14px rgba(256, 256, 256, 0.5) inset;
+        top: -15px;
+        right: -15px;
+        animation: nudge 20s infinite linear;
+        -webkit-animation: nudge 20s infinite linear;
+        -moz-animation: nudge 20s infinite linear;
+        -o-animation: nudge 20s infinite linear;
+    }
+    
+    .planet_neptune {
+        width: 800px;
+        height: 800px;
+        top: -248px;
+        left: -248px
+    }
+    
+    .neptune {
+        width: 800px;
+        height: 800px;
+        border-radius: 400px;
+        transform: skew(20deg, 0deg) rotateX(60deg);
+        -webkit-transform: skew(20deg, 0deg) rotateX(60deg);
+        -moz-transform: skew(20deg, 0deg) rotateX(60deg);
+        -o-transform: skew(20deg, 0deg) rotateX(60deg);
+    }
+    
+    .neptune div {
+        width: 400px;
+        height: 1px;
+        top: 400px;
+        left: 400px;
+        animation: neptune_revolve 26s infinite linear;
+        -webkit-animation: neptune_revolve 26s infinite linear;
+        -moz-animation: neptune_revolve 26s infinite linear;
+        -o-animation: neptune_revolve 26s infinite linear;
+    }
+    
+    .neptune div p span {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background: url(../images/uranus.jpg) repeat-x 0 0;
+    	background-size: 200%;
+    	box-shadow: 0px 0px 35px rgba(256, 256, 256, 0.3), -1px -2px 14px rgba(256, 256, 256, 0.5) inset;
+        top: -10px;
+        right: -10px;
+        animation: nudge 20s infinite linear;
+        -webkit-animation: nudge 20s infinite linear;
+        -moz-animation: nudge 20s infinite linear;
+        -o-animation: nudge 20s infinite linear;
+    }
+    
+    @keyframes mercury_revolve {
+        0% {
+            transform: rotateZ(0deg);
+            -webkit-transform: rotateZ(0deg);
+            -moz-transform: rotateZ(0deg);
+            -o-transform: rotateZ(0deg)
+        }
+        100% {
+            transform: rotateZ(360deg);
+            -webkit-transform: rotateZ(360deg);
+            -moz-transform: rotateZ(360deg);
+            -o-transform: rotateZ(360deg)
+        }
+    }
+    
+    @keyframes venus_revolve {
+        0% {
+            transform: rotateZ(100deg);
+            -webkit-transform: rotateZ(100deg);
+            -moz-transform: rotateZ(100deg);
+            -o-transform: rotateZ(100deg)
+        }
+        100% {
+            transform: rotateZ(460deg);
+            -webkit-transform: rotateZ(460deg);
+            -moz-transform: rotateZ(460deg);
+            -o-transform: rotateZ(460deg)
+        }
+    }
+    
+    @keyframes earth_revolve {
+        0% {
+            transform: rotateZ(200deg);
+            -webkit-transform: rotateZ(200deg);
+            -moz-transform: rotateZ(200deg);
+            -o-transform: rotateZ(200deg)
+        }
+        100% {
+            transform: rotateZ(560deg);
+            -webkit-transform: rotateZ(560deg);
+            -moz-transform: rotateZ(560deg);
+            -o-transform: rotateZ(560deg)
+        }
+    }
+    
+    @keyframes mars_revolve {
+        0% {
+            transform: rotateZ(-20deg);
+            -webkit-transform: rotateZ(-20deg);
+            -moz-transform: rotateZ(-20deg);
+            -o-transform: rotateZ(-20deg)
+        }
+        100% {
+            transform: rotateZ(340deg);
+            -webkit-transform: rotateZ(340deg);
+            -moz-transform: rotateZ(340deg);
+            -o-transform: rotateZ(340deg)
+        }
+    }
+    
+    @keyframes jupiter_revolve {
+        0% {
+            transform: rotateZ(80deg);
+            -webkit-transform: rotateZ(80deg);
+            -moz-transform: rotateZ(80deg);
+            -o-transform: rotateZ(80deg)
+        }
+        100% {
+            transform: rotateZ(440deg);
+            -webkit-transform: rotateZ(440deg);
+            -moz-transform: rotateZ(440deg);
+            -o-transform: rotateZ(440deg)
+        }
+    }
+    
+    @keyframes saturn_revolve {
+        0% {
+            transform: rotateZ(0deg);
+            -webkit-transform: rotateZ(0deg);
+            -moz-transform: rotateZ(0deg);
+            -o-transform: rotateZ(0deg)
+        }
+        100% {
+            transform: rotateZ(360deg);
+            -webkit-transform: rotateZ(360deg);
+            -moz-transform: rotateZ(360deg);
+            -o-transform: rotateZ(360deg)
+        }
+    }
+    
+    @keyframes uranus_revolve {
+        0% {
+            transform: rotateZ(-80deg);
+            -webkit-transform: rotateZ(-80deg);
+            -moz-transform: rotateZ(-80deg);
+            -o-transform: rotateZ(-80deg)
+        }
+        100% {
+            transform: rotateZ(280deg);
+            -webkit-transform: rotateZ(280deg);
+            -moz-transform: rotateZ(280deg);
+            -o-transform: rotateZ(280deg)
+        }
+    }
+    
+    @keyframes neptune_revolve {
+        0% {
+            transform: rotateZ(-180deg);
+            -webkit-transform: rotateZ(-180deg);
+            -moz-transform: rotateZ(-180deg);
+            -o-transform: rotateZ(-180deg)
+        }
+        100% {
+            transform: rotateZ(180deg);
+            -webkit-transform: rotateZ(180deg);
+            -moz-transform: rotateZ(180deg);
+            -o-transform: rotateZ(180deg)
+        }
+    }
+    
+    @keyframes dong_span {
+        0% {
+            transform: rotateZ(0deg);
+            -webkit-transform: rotateZ(0deg);
+            -moz-transform: rotateZ(0deg);
+            -o-transform: rotateZ(0deg)
+        }
+        100% {
+            transform: rotateZ(360deg);
+            -webkit-transform: rotateZ(360deg);
+            -moz-transform: rotateZ(360deg);
+            -o-transform: rotateZ(360deg)
+        }
+    }
+    @keyframes nudge {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -1639px 0;
+    }
+}
