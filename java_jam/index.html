@@ -16,7 +16,26 @@
     <script src="js/index.js"></script>
 </head>
 
-<body>
+<body onload="changeTime()">
+    <!-- 提示对话框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-sm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <!-- title -->
+                    <h4 id="dialogTitle" class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <!-- content -->
+                <div class="modal-body" id="dialogContent">
+                </div>
+                <!-- <div class="modal-footer">
+                    button
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
     <!-- nav导航条 -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container-fluid">
@@ -35,7 +54,28 @@
                     <li><a id="navHome" href="#" onclick="changePage(this)">Home</a></li>
                     <li><a id="navMenu" href="#" onclick="changePage(this)">Menu</a></li>
                     <li><a id="navMusic" href="#" onclick="changePage(this)">Music</a></li>
-                    <li><a href="#" onclick="changePage(this)">Jobs</a></li>
+                    <li><a id="navCountry" href="#" onclick="changePage(this)">Country</a></li>
+                    <li><a id="navOffer" href="#" onclick="checkOffer()">View Offers</a></li>
+                    <li><a id="navEmployee" href="#" onclick="changePage(this)">Employee’s Records</a></li>
+                    <li><a id="navCalculator" href="#" onclick="changePage(this)">Calculator</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a id="navBlackground" href="#">
+                            <input type="color" id="bgcolor" oninput="changeBackground(bgcolor.value)">
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span id="more">More</span><span class="caret"></span></a>
+                        <ul id="moreMenu" class="dropdown-menu" role="menu">
+                            <li id="loginList"><a id="navLogin" href="#" onclick="changePage(this)">Login</a></li>
+                            <li id="registerList"><a id="navRegister" href="#" onclick="changePage(this)">Register</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                <a id="time"></a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -526,7 +566,7 @@
                         <img src="image/classical1.jpg" alt="...">
                         <div class="caption">
                             <h4 class="text-center">Time to Say Goodbye</h4>
-                            <audio controls="controls" >
+                            <audio controls="controls">
                                 <source src="song/classical1.mp3" type="audio/mpeg">
                             </audio>
                         </div>
@@ -537,7 +577,7 @@
                         <img src="image/classical2.jpg" alt="...">
                         <div class="caption">
                             <h4 class="text-center">Blue Danube</h4>
-                            <audio controls="controls" >
+                            <audio controls="controls">
                                 <source src="song/classical2.mp3" type="audio/mpeg">
                             </audio>
                         </div>
@@ -548,7 +588,7 @@
                         <img src="image/classical3.jpg" alt="...">
                         <div class="caption">
                             <h4 class="text-center">Moonlight</h4>
-                            <audio controls="controls" >
+                            <audio controls="controls">
                                 <source src="song/classical3.mp3" type="audio/mpeg">
                             </audio>
                         </div>
@@ -559,7 +599,7 @@
                         <img src="image/classical4.jpg" alt="...">
                         <div class="caption">
                             <h4 class="text-center">Parade of the Tin Soldiers</h4>
-                            <audio controls="controls" >
+                            <audio controls="controls">
                                 <source src="song/classical4.mp3" type="audio/mpeg">
                             </audio>
                         </div>
@@ -583,7 +623,7 @@
                         <img src="image/blues1.jpg" alt="...">
                         <div class="caption">
                             <h4 class="text-center">The Creeper</h4>
-                            <audio controls="controls" >
+                            <audio controls="controls">
                                 <source src="song/blues1.mp3" type="audio/mpeg">
                             </audio>
                         </div>
@@ -594,7 +634,7 @@
                         <img src="image/blues2.jpg" alt="...">
                         <div class="caption">
                             <h4 class="text-center">Hot Little Mama</h4>
-                            <audio controls="controls" >
+                            <audio controls="controls">
                                 <source src="song/blues2.mp3" type="audio/mpeg">
                             </audio>
                         </div>
@@ -605,7 +645,7 @@
                         <img src="image/blues3.jpg" alt="...">
                         <div class="caption">
                             <h4 class="text-center">It Ain't The Meat</h4>
-                            <audio controls="controls" >
+                            <audio controls="controls">
                                 <source src="song/blues3.mp3" type="audio/mpeg">
                             </audio>
                         </div>
@@ -616,7 +656,7 @@
                         <img src="image/blues4.jpg" alt="...">
                         <div class="caption">
                             <h4 class="text-center">Georgia Slop</h4>
-                            <audio controls="controls" >
+                            <audio controls="controls">
                                 <source src="song/blues4.mp3" type="audio/mpeg">
                             </audio>
                         </div>
@@ -624,9 +664,273 @@
                 </div>
             </div>
             <div class="col-sm-1 col-md-1"></div>
-        </div>        
+        </div>
     </main>
-
+    <!-- Country -->
+    <main id="mainCountry" class="container-fluid">
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2 class="featurette-heading">Country</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-10 col-md-10">
+                <div class="col-sm-6 col-md-4" id="chinaTip">
+                    <a class="thumbnail" href="#">
+                        <img id="chinaImg" src="image/Flag_of_the_People's_Republic_of_China.png" alt="..." onmouseover="showTips(this)" onmouseout="hideTips(this)">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4" id="usTip">
+                    <a class="thumbnail" href="#">
+                        <img id="usImg" src="image/Flag_of_the_United_States.png" alt="..." onmouseover="showTips(this)" onmouseout="hideTips(this)">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4" id="ukTip">
+                    <a class="thumbnail" href="#">
+                        <img id="ukImg" src="image/Flag_of_the_United_Kingdom.png" alt="..." onmouseover="showTips(this)" onmouseout="hideTips(this)">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1"></div>
+        </div>
+    </main>
+    <!-- login -->
+    <main id="mainLogin" class="container-fluid">
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2 class="featurette-heading">Login</h2>
+            </div>
+        </div>
+        <form action="#" method="post" role="form" class="form-horizontal">
+            <div class="row">
+                <div class="col-sm-1 col-xs-1"></div>
+                <fieldset id="loginFieldset" class="col-sm-10 col-xs-10">
+                    <!-- <legend>Student Login</legend> -->
+                    <!-- Email -->
+                    <div class="form-group row">
+                        <label for="loginEmail" class="col-sm-2 col-xs-2 control-label">Email:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="email" id="loginEmail" class="form-control" placeholder="please input your email">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- Password -->
+                    <div class="form-group row">
+                        <label for="loginPassword" class="col-sm-2 col-xs-2 control-label">Password:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="password" id="loginPassword" class="form-control" placeholder="please input your password">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- submit -->
+                    <div class="form-group row">
+                        <div class="col-sm-offset-2 col-xs-offset-2 col-sm-9 col-xs-9">
+                            <button type="button" onclick="loginCheck()" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="col-sm-1 col-xs-1"></div>
+            </div>
+        </form>
+    </main>
+    <!-- register -->
+    <main id="mainRegister" class="container-fluid">
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2 class="featurette-heading">Student Registration</h2>
+            </div>
+        </div>
+        <form action="#" method="post" role="form" class="form-horizontal">
+            <div class="row">
+                <div class="col-sm-1 col-xs-1"></div>
+                <fieldset id="registerFieldset" class="col-sm-10 col-xs-10">
+                    <!-- <legend>Student Registration</legend> -->
+                    <!-- First Name -->
+                    <div class="form-group row">
+                        <label for="registerFName" class="col-sm-2 col-xs-2 control-label">First Name:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="text" class="form-control" id="registerFName" placeholder="please input your First Name">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="form-group row">
+                        <label for="registerLName" class="col-sm-2 col-xs-2 control-label">Last Name:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="text" class="form-control" id="registerLName" placeholder="please input your Last Name">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- Email -->
+                    <div class="form-group row">
+                        <label for="registerEmail" class="col-sm-2 col-xs-2 control-label">Email:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="email" id="registerEmail" class="form-control" placeholder="please input your email">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- Password -->
+                    <div class="form-group row">
+                        <label for="registerPassword" class="col-sm-2 col-xs-2 control-label">Password:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="password" id="registerPassword" class="form-control" placeholder="please input your password">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- RePassword -->
+                    <div class="form-group row">
+                        <label for="registerRepassword" class="col-sm-2 col-xs-2 control-label">RePassword:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="password" id="registerRepassword" class="form-control" placeholder="please confirm your password">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- Tel -->
+                    <div class="form-group row">
+                        <label for="registerTel" class="col-sm-2 col-xs-2 control-label">Tel:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="tel" id="registerTel" class="form-control" placeholder="please input your tel">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- Address -->
+                    <div class="form-group row">
+                        <label for="registerAddress" class="col-sm-2 col-xs-2 control-label">Address:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="text" class="form-control" id="registerAddress" placeholder="please input your address">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- submit -->
+                    <div class="form-group row">
+                        <div class="col-sm-offset-2 col-xs-offset-2 col-sm-9 col-xs-9">
+                            <button type="button" onclick="registerCheck()" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="col-sm-1 col-xs-1"></div>
+            </div>
+        </form>
+    </main>
+    <!-- Array of employee’s records-->
+    <main id="mainEmployee" class="container-fluid">
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2 class="featurette-heading">Employee’s</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 col-xs-2"></div>
+            <div class="col-sm-8 col-xs-8">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="info">
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Tel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="idTable">1</td>
+                            <td id="nameTable">one</td>
+                            <td id="addressTable">Shenzhen</td>
+                            <td id="telTable">131-1111-1111</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <nav class="navbar-right">
+                                    <ul class="pagination">
+                                        <li id="previousLi" class="disabled"><a id="previous" onclick="changeEmployee(this)" href="#">&laquo;</a></li>
+                                        <li class="active"><a id="one" onclick="changeEmployee(this)" href="#">1</a></li>
+                                        <li><a id="two" onclick="changeEmployee(this)" href="#">2</a></li>
+                                        <li><a id="three" onclick="changeEmployee(this)" href="#">3</a></li>
+                                        <li><a id="four" onclick="changeEmployee(this)" href="#">4</a></li>
+                                        <li><a id="five" onclick="changeEmployee(this)" href="#">5</a></li>
+                                        <li><a id="six" onclick="changeEmployee(this)" href="#">6</a></li>
+                                        <li><a id="seven" onclick="changeEmployee(this)" href="#">7</a></li>
+                                        <li><a id="eight" onclick="changeEmployee(this)" href="#">8</a></li>
+                                        <li id="nextLi"><a id="next" onclick="changeEmployee(this)" href="#">&raquo;</a></li>
+                                    </ul>
+                                </nav>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-sm-2 col-xs-2"></div>
+        </div>
+    </main>
+    <!-- calculator -->
+    <main id="mainCalculator" class="container-fluid">
+        <div class="row featurette">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2 class="featurette-heading">Calculator</h2>
+            </div>
+        </div>
+        <form action="#" method="post" role="form" class="form-horizontal">
+            <div class="row">
+                <div class="col-sm-1 col-xs-1"></div>
+                <fieldset id="calculatorFieldset" class="col-sm-10 col-xs-10">
+                    <!-- <legend>Calculator</legend> -->
+                    <!-- Operator1 -->
+                    <div class="form-group row" id="operator1Div">
+                        <label for="operator1" class="col-sm-2 col-xs-2 control-label">Op1:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="text" id="operator1" class="form-control" placeholder="please input operator1" onblur="checkNumber(this);">
+                            <span class="" id="operator1Span"></span>
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- Operator2 -->
+                    <div class="form-group row" id="operator2Div">
+                        <label for="operator2" class="col-sm-2 col-xs-2 control-label">Op2:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="text" id="operator2" class="form-control" placeholder="please input operator2" onblur="checkNumber(this);">
+                            <span class="" id="operator2Span"></span>
+                            <!-- glyphicon glyphicon-ok form-control-feedback -->
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- Result -->
+                    <div class="form-group row">
+                        <label for="result" class="col-sm-2 col-xs-2 control-label">Result:</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="text" id="result" class="form-control" placeholder="I will show you the result">
+                        </div>
+                        <div class="col-sm-1 col-xs-1"></div>
+                    </div>
+                    <!-- calculate -->
+                    <div class="form-group row">
+                        <div class=" col-sm-offset-2 col-xs-offset-2 col-sm-2 col-xs-9">
+                            <button type="button" id="btnAdd" class="btn btn-primary btn-block" onclick="calculate(this)">Add</button>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-0 col-xs-offset-2 col-xs-9">
+                            <button type="button" id="btnSub" class="btn btn-danger btn-block" onclick="calculate(this)">Sub</button>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-0 col-xs-offset-2 col-xs-9">
+                            <button type="button" id="btnProduct" class="btn btn-info btn-block" onclick="calculate(this)">Product</button>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-0 col-xs-offset-2 col-xs-9">
+                            <button type="button" id="btnDivision" class="btn btn-success btn-block" onclick="calculate(this)">Division</button>
+                        </div>
+                        <div class="col-sm-1 col-sm-offset-0 col-xs-offset-2 col-xs-9">
+                            <button type="button" id="btnClear" class="btn btn-warning btn-block" onclick="clearNumber()">Clr</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </main>
     <!-- footer -->
     <footer id="myFooter">
         <address class="text-center">

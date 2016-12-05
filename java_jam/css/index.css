@@ -87,6 +87,10 @@ body {
     width: 100%;
     height: 32px;
 }
+input[type="color" i] {
+    background-color: #222222;
+    border-width: 0px;
+}
 
 /* footer设定 */
 address {
@@ -98,5 +102,23 @@ address {
 	display: inline;
 }
 #mainMenu {
+	display: none;
+}
+#mainMusic {
+	display: none;
+}
+#mainCountry {
+	display: none;
+}
+#mainRegister {
+	display: none;
+}
+#mainLogin {
+	display: none;
+}
+#mainCalculator {
+	display: none;
+}
+#mainEmployee {
 	display: none;
 }
