@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>商品详细页面</title>
+	<link rel="stylesheet" href="public/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="public/css/shop_common.css" type="text/css" />
+	<link rel="stylesheet" href="public/css/shop_header.css" type="text/css" />
+	<link rel="stylesheet" href="public/css/shop_list.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/shop_goods.css" type="text/css" />
+    <script type="text/javascript" src="public/js/jquery.js" ></script>
+    <script type="text/javascript" src="public/js/topNav.js" ></script>
+    <script type="text/javascript" src="public/js/shop_goods.js" ></script>
+</head>
+<body>
+	<!-- Header  -wll-2016/06/10 -->
+	<div class="shop_hd">
+		<!-- Header TopNav -->
+		<div class="shop_hd_topNav">
+			<div class="shop_hd_topNav_all">
+				<!-- Header TopNav Left -->
+				<div class="shop_hd_topNav_all_left">
+					<?php
+                        echo $this->is_login ? "<p>{$_SESSION['user']['user_name']}，您好，欢迎来到<b><a href='index.php'>JamesShop</a> [<a href='index.php?p=home&c=user&a=logout'>退出</a>] </b></p>" :
+					"<p>您好，欢迎来到<b><a href='index.php'>JamesShop</a></b>[<a href='index.php?p=home&c=user&a=toLogin'>登录</a>] [<a href='index.php?p=home&c=user&a=toRegister'>注册</a>]</p>";
+					?>
+				</div>
+				<!-- Header TopNav Left End -->
+
+				<!-- Header TopNav Right -->
+				<div class="shop_hd_topNav_all_right">
+					<ul class="topNav_quick_menu">
+						<li>
+							<div class="topNav_menu">&nbsp;&nbsp;
+								<a href="#" class="topNavHover">我的东东<i></i></a>
+								<div class="topNav_menu_bd" style="display:none;" >
+									<ul>
+										<li><a title="已买到的商品" target="_top" href="#">已买到的商品</a></li>
+										<li><a title="个人主页" target="_top" href="#">个人主页</a></li>
+										<li><a title="我的好友" target="_top" href="#">我的好友</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="topNav_menu">&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="index.php?p=home&c=cart&a=index" class="topNav_menu">购物车<!--<b>0</b>种商品<i></i>--></a>
+								<div class="topNav_menu_bd" style="display:none;">
+									<!--
+						            <ul>
+						              <li><a title="已售出的商品" target="_top" href="#">已售出的商品</a></li>
+						              <li><a title="销售中的商品" target="_top" href="#">销售中的商品</a></li>
+						            </ul>
+						            <p>还没有商品，赶快去挑选！</p>
+						            -->
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div class="topNav_menu">&nbsp;
+								<a href="#" class="topNav_menu">我的收藏</a>
+								<!--<div class="topNav_menu_bd" style="display:none;">-->
+								<!--<ul>-->
+								<!--<li><a title="收藏的商品" target="_top" href="#">收藏的商品</a></li>-->
+								<!--<li><a title="收藏的店铺" target="_top" href="#">收藏的店铺</a></li>-->
+								<!--</ul>-->
+								<!--</div>-->
+							</div>
+						</li>
+
+						<li>
+							<div class="topNav_menu">&nbsp;&nbsp;
+								<a href="#">站内消息</a>
+							</div>
+						</li>
+
+
+						<li>
+							<div class="topNav_menu">&nbsp;
+								<a href="#" class="topNavHover">联系店长<i></i></a>
+								<div class="topNav_menu_bd" style="display:none;">
+									<ul>
+										<li><a title="给店长发站内信" target="_top" href="#">给店长发站内信</a></li>
+										<li><a title="给店长发邮件" target="_top" href="#">给店长发邮件</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Header TopNav Right End -->
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<!-- Header TopNav End -->
+
+		<!-- TopHeader Center -->
+		<div class="shop_hd_header">
+			<div class="shop_hd_header_logo"><h1 class="logo"><a href="index.php"><img src="public/images/logo.png" width="180px" height="50px" alt="JamesShop" /></a><span>JamesShop</span></h1></div>
+			<div class="shop_hd_header_search">
+				<ul class="shop_hd_header_search_tab">
+			        <li id="search" class="current">商品</li>
+			    </ul>
+                            <div class="clear"></div>
+			    <div class="search_form">
+			    	<form method="post" action="index.php?p=home&c=goods&a=search">
+			    		<div class="search_formstyle">
+			    			<input type="text" class="search_form_text" name="search_content" />
+			    			<input type="submit" class="search_form_sub" name="secrch_submit" value="" title="搜索" />
+			    		</div>
+			    	</form>
+			    </div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!-- TopHeader Center End -->
+
+		<!-- Header Menu -->
+		<div class="shop_hd_menu">
+			<!-- 所有商品菜单 -->
+
+			<div id="shop_hd_menu_all_category" class="shop_hd_menu_all_category"><!-- 首页去掉 id="shop_hd_menu_all_category" 加上clsss shop_hd_menu_hover -->
+				<div class="shop_hd_menu_all_category_title"><h2 title="所有商品分类"><a href="javascript:void(0);">所有商品分类</a></h2><i></i></div>
+				<div id="shop_hd_menu_all_category_hd" class="shop_hd_menu_all_category_hd">
+					<ul class="shop_hd_menu_all_category_hd_menu clearfix">
+						<!-- 单个菜单项 -->
+						<?php foreach ($cats as $k => $v):?>
+						<?php if ($k < 9 && $k > 0):?>
+						<li id="cat_1" class="">
+							<h3><a href="" title="<?php echo $v['cat_name'];?>"><?php echo $v['cat_name'];?></a></h3>
+							<div id="cat_1_menu" class="cat_menu clearfix" style="">
+								<?php foreach ($v['child'] as $v1):?>
+								<dl class="clearfix">
+									<dt><a href=""><?php echo $v1['cat_name'];?></a></dt>
+									<dd>
+										<?php foreach ($v1['child'] as $v2):?>
+										<a href="index.php?p=home&c=category&a=list&cat_id=<?php echo $v2['cat_id'];?>"><?php echo $v2['cat_name'];?></a>
+										<?php endforeach;?>
+									</dd>
+								</dl>
+								<?php endforeach;?>
+							</div>
+						</li>
+						<?php endif;?>
+						<?php endforeach;?>
+						<!-- 单个菜单项 End -->
+						<li class="more"><a href="">查看更多分类</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 所有商品菜单 END -->
+
+			<!-- 普通导航菜单 -->
+			<ul class="shop_hd_menu_nav">
+				<li class="current_link"><a href=""><span>首页</span></a></li>
+				<li class="link"><a href=""><span>团购</span></a></li>
+				<li class="link"><a href=""><span>品牌</span></a></li>
+				<li class="link"><a href=""><span>优惠卷</span></a></li>
+				<li class="link"><a href=""><span>积分中心</span></a></li>
+				<li class="link"><a href=""><span>运动专场</span></a></li>
+				<li class="link"><a href=""><span>微商城</span></a></li>
+			</ul>
+			<!-- 普通导航菜单 End -->
+		</div>
+		<!-- Header Menu End -->
+
+	</div>
+	<div class="clear"></div>
+	<!-- 面包屑 注意首页没有 -->
+	<div class="shop_hd_breadcrumb">
+		<strong>   </strong>
+		<!--<strong>当前位置：</strong>-->
+		<!--<span>-->
+			<!--<a href="">首页</a>&nbsp;›&nbsp;-->
+			<!--<a href="">商品分类</a>&nbsp;›&nbsp;-->
+			<!--<a href="">男装女装</a>&nbsp;›&nbsp;-->
+			<!--<a href="">男装</a>-->
+		<!--</span>-->
+	</div>
+	<div class="clear"></div>
+	<!-- 面包屑 End -->
+
+	<!-- Header End -->
+	
+	<!-- Goods Body -->
+	<div class="shop_goods_bd clear">
+
+		<!-- 商品展示 -->
+		<form action="index.php?p=home&c=cart&a=insert" method="post" id="goods_form" name="goods_form">
+		<div class="shop_goods_show">
+			<div class="shop_goods_show_left">
+				<!-- 京东商品展示 -->
+				<link rel="stylesheet" href="public/css/shop_goodPic.css" type="text/css" />
+				<script type="text/javascript" src="public/js/shop_goodPic_base.js"></script>
+				<script type="text/javascript" src="public/js/lib.js"></script>
+				<script type="text/javascript" src="public/js/163css.js"></script>
+				<div id="preview">
+					<div class=jqzoom id="spec-n1" onClick="window.open('/')"><IMG height="350" src="public/uploads/<?php echo $goods['goods_img'];?>" jqimg="public/uploads/<?php echo $goods['goods_img'];?>" width="350">
+						</div>
+						<div id="spec-n5">
+							<div class=control id="spec-left">
+								<img src="public/images/left.gif" />
+							</div>
+							<div id="spec-list">
+								<ul class="list-h">
+									<li><img src="public/uploads/<?php echo $goods['goods_img'];?>"></li>
+									<?php foreach($galary as $galaryImg):?>
+									<li><img src="public/uploads/<?php echo $galaryImg['img_url'];?>"></li>
+									<?php endforeach;?>
+								</ul>
+							</div>
+							<div class=control id="spec-right">
+								<img src="public/images/right.gif" />
+							</div>
+							
+					    </div>
+					</div>
+
+					<SCRIPT type=text/javascript>
+						$(function(){			
+						   $(".jqzoom").jqueryzoom({
+								xzoom:400,
+								yzoom:400,
+								offset:10,
+								position:"right",
+								preload:1,
+								lens:1
+							});
+							$("#spec-list").jdMarquee({
+								deriction:"left",
+								width:350,
+								height:56,
+								step:2,
+								speed:4,
+								delay:10,
+								control:true,
+								_front:"#spec-right",
+								_back:"#spec-left"
+							});
+							$("#spec-list img").bind("mouseover",function(){
+								var src=$(this).attr("src");
+								$("#spec-n1 img").eq(0).attr({
+									src:src.replace("\/n5\/","\/n1\/"),
+									jqimg:src.replace("\/n5\/","\/n0\/")
+								});
+								$(this).css({
+									"border":"2px solid #ff6600",
+									"padding":"1px"
+								});
+							}).bind("mouseout",function(){
+								$(this).css({
+									"border":"1px solid #ccc",
+									"padding":"2px"
+								});
+							});				
+						})
+						</SCRIPT>
+					<!-- 京东商品展示 End -->
+
+			</div>
+			<div class="shop_goods_show_right">
+				<ul>
+					<li>
+						<label></label>
+						<strong style="font-size:20px; font-weight:bold;"><?php echo $goods['goods_name'];?></strong>
+					</li>
+					<li><label></label><font color="red"><?php echo $goods['goods_brief'];?></font></li>
+					<li>
+						<label>价格：</label>
+						<span><strong><?php echo $goods['is_promote'] === '1' ? $goods['promote_price'] : $goods['shop_price'];?></strong>元</span>
+						<input type="hidden" name="goods_price" value="<?php echo $goods['is_promote'] === '1' ? $goods['promote_price'] : $goods['shop_price'];?>">
+					</li>
+					<li>
+						<label>市场价：</label>
+						<s><?php echo $goods['market_price'];?>元</s>
+					</li>
+					<li>
+						<label>剩余数量：</label>
+						<span><?php echo $goods['goods_number'];?></span>
+					</li>
+					<!--<li>-->
+						<!--<label>评价：</label>-->
+						<!--<span>0条评论</span>-->
+					<!--</li>-->
+					<li class="goods_num">
+						<label>购买数量：</label>
+						<span><a class="good_num_jian" id="good_num_jian" href="javascript:void(0);"></a><input type="text" value="1" id="goods_number" name="goods_number" class="good_nums" /><a href="javascript:void(0);" id="good_num_jia" class="good_num_jia"></a></span>
+					</li>
+					<li style="padding:20px 0;">
+						<label>&nbsp;</label>
+						<!--<a href="" class="goods_sub goods_sub_gou" >加入购物车</a>-->
+						<span><a href="javascript:void(0)" class="goods_sub goods_sub_gou" onclick="document.goods_form.submit()">加入购物车</a></span>
+						<!--<span><a href="" class="goods_sub goods_sub_gou"  ><input type="submit" value="加入购物车"/></a></span>-->
+					</li>
+				</ul>
+			</div>
+		</div>
+			<input type="hidden" name="goods_id" value="<?php echo $goods['goods_id'];?>">
+			<input type="hidden" name="user_id" value="<?php echo $this->is_login ? $_SESSION['user']['user_id'] : '';?>">
+		</form>
+		<!-- 商品展示 End -->
+
+		<div class="clear mt15"></div>
+		<!-- Goods Left -->
+		<div class="shop_bd_list_left clearfix">
+			<!-- 热卖推荐商品 -->
+			<div class="shop_bd_list_bk clearfix">
+				<div class="title">热卖推荐商品</div>
+				<div class="contents clearfix">
+					<ul class="clearfix">
+						<?php foreach($hotGoods as $hot):?>
+						<li class="clearfix">
+							<div class="goods_name"><a href="index.php?p=home&c=goods&a=index&goods_id=<?php echo $hot['goods_id'];?>"><?php echo $hot['goods_name'];?></a></div>
+							<div class="goods_pic"><span class="goods_price">¥ <?php echo $hot['shop_price'];?> </span><a href="index.php?p=home&c=goods&a=index&goods_id=<?php echo $hot['goods_id'];?>"><img src="public/uploads/<?php echo $hot['goods_img'];?>" /></a></div>
+							<div class="goods_xiaoliang">
+								<span class="goods_xiaoliang_link"><a href="">去看看</a></span>
+								<!--<span class="goods_xiaoliang_nums">剩余量:<strong><?php echo $goods['goods_number'];?></strong></span>-->
+							</div>
+						</li>
+						<?php endforeach;?>
+					</ul>
+				</div>
+			</div>
+			<!-- 热卖推荐商品 -->
+			<div class="clear"></div>
+		</div>
+		<!-- Goods Left End -->
+
+		<!-- 商品详情 -->
+		<script type="text/javascript" src="public/js/shop_goods_tab.js"></script>
+		<div class="shop_goods_bd_xiangqing clearfix">
+			<div class="shop_goods_bd_xiangqing_tab">
+				<ul>
+					<li id="xiangqing_tab_1" onmouseover="shop_goods_easytabs('1', '1');" onfocus="shop_goods_easytabs('1', '1');" onclick="return false;"><a href=""><span>商品详情</span></a></li>
+					<li id="xiangqing_tab_3" onmouseover="shop_goods_easytabs('1', '3');" onfocus="shop_goods_easytabs('1', '3');" onclick="return false;"><a href=""><span>售后保障</span></a></li>
+					<li id="xiangqing_tab_2" onmouseover="shop_goods_easytabs('1', '2');" onfocus="shop_goods_easytabs('1', '2');" onclick="return false;"><a href=""><span>商品评论</span></a></li>
+				</ul>
+			</div>
+			<div class="shop_goods_bd_xiangqing_content clearfix">
+
+				<div id="xiangqing_content_3" class="xiangqing_contents clearfix">
+					<p style="color: red;font-size: 18px;padding: 10px;">JamesShop承诺</p>
+					<p style="padding: 10px;color: #7B8188">
+						JamesShop平台销售并发货的商品，由平台提供发票和相应的售后服务。请您放心购买！
+						注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，
+						本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！
+						并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
+					</p>
+					<p style="color: red;font-size: 18px;padding: 10px;">正品行货</p>
+					<p style="padding: 10px;color: #7B8188">
+						JamesShop向您保证所售商品均为正品行货，JamesShop商品开具机打发票或电子发票。
+					</p>
+					<p style="color: red;font-size: 18px;padding: 10px;">全国联保</p>
+					<p style="padding: 10px;color: #7B8188">
+						凭质保证书及JamesShop发票，可享受全国联保服务
+						（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），
+						与您亲临商场选购的商品享受相同的质量保证。
+						JamesShop还为您提供具有竞争力的商品价格和运费政策，请您放心购买！
+					</p>
+					<p style="color: red;font-size: 18px;padding: 10px;">无忧退换货</p>
+					<p style="padding: 10px;color: #7B8188">
+						客户购买JamesShop商品7日内（含7日，自客户收到商品之日起计算），
+						在保证商品完好的前提下，可无理由退货。（
+						部分商品除外，详情请见各商品细则）
+					</p>
+				</div>
+				<div id="xiangqing_content_1" class="xiangqing_contents clearfix">
+					<table>
+						<?php
+							foreach($uniqueAttr as $k => $attr){
+							if(intval($k) % 3 === 0)
+								echo '<tr>';
+							echo "<td style='padding: 10px;font-size: 14px;'>{$attr['attr_name']}:{$attr['attr_value']}</td>";
+							if(intval($k) % 3 === 1 || intval($k) === intval(count($uniqueAttr)) - 1)
+								echo '</tr>';
+						}
+						?>
+					</table>
+					<p style="color: red;font-size: 18px;padding: 10px;">商品描述</p>
+					<p style="color: #7B8188;padding-left: 10px"><?php echo $goods['goods_desc'];?></p>
+				</div>
+				<div id="xiangqing_content_2" class="xiangqing_contents clearfix">
+
+				</div>
+
+			</div>
+		</div>
+		<!-- 商品详情 End -->
+
+	</div>
+	<!-- Goods Body End -->
+
+	<?php include "footer.html";?>
+
+</body>
+</html>
