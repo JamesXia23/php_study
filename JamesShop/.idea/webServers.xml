@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1aa720b1-81f3-4c8d-ba74-878f580218ab" name="腾讯云" url="http://182.254.230.154">
+        <fileTransfer host="182.254.230.154" port="22" rootFolder="/var/www/JamesShop" accessType="SFTP" password="dfc4dfcbdfc4dfcbdf9bdf93df93df9fdf9adf93df9bdf93" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

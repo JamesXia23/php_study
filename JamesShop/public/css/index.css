@@ -1,0 +1,141 @@
+/* 全局设置 */
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	background-color: #eeeeee;
+	overflow-x: hidden;
+}
+/* 导航栏设定 */
+.navbar {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+@media (min-width: 768px) {
+	.navbar {
+	  top: 15px;
+	  left: 15%;
+	  width: 70%;
+	  position: absolute;
+	  border-radius: 5px;
+	}	
+}
+@media (min-width: 992px) {
+	.navbar {
+	  top: 15px;
+	  left: 10%;
+	  width: 80%;
+	  position: absolute;
+	  border-radius: 5px;
+	}	
+}
+
+/* 滚动条设定 */
+.carousel {
+  height: 40%;
+  margin-bottom: 10px;
+}
+.carousel-inner {
+	height: 100%;
+}
+
+.carousel .item {
+  height: 100%;
+}
+.carousel-inner > .item > img {
+  min-width: 100%;
+  height: 100%;
+}
+/* home设定 */
+.row {
+	padding: 10px;
+	/*height: 100%;*/
+}
+.col-md-5 {
+	padding: 3%;
+	height: 100%;
+}
+.col-md-5 > img {
+	width: 100%;
+	height: 100%;
+}
+.col-md-5 > h2 {
+	height: 50%;
+}
+/* 分割线设定 */
+.featurette-divider {
+	border: 0;
+	background-color: #e0e0e0;
+	height: 1px;
+	width: 80%;
+}
+
+/* menu设定 */
+.thumbnail {
+	background-color: #eeeeee; 
+	height: auto;
+    border: 0;
+}
+.text-center > a {
+	margin: 2%;
+}
+
+/* music设定 */
+.caption > audio {
+    width: 100%;
+    height: 32px;
+}
+input[type="color" i] {
+    background-color: #222222;
+    border-width: 0px;
+}
+
+/* footer设定 */
+address {
+	margin-bottom: 0; 
+}
+
+/* 导航栏 */
+.dropdown-submenu {
+	position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+	top: 0;
+	left: 100%;
+	margin-top: -6px;
+	margin-left: -1px;
+	-webkit-border-radius: 0 6px 6px 6px;
+	-moz-border-radius: 0 6px 6px;
+	border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+	display: block;
+}
+.dropdown-submenu > a:after {
+	display: block;
+	content: " ";
+	float: right;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 5px 0 5px 5px;
+	border-left-color: #ccc;
+	margin-top: 5px;
+	margin-right: -10px;
+}
+.dropdown-submenu:hover > a:after {
+	border-left-color: #fff;
+}
+.dropdown-submenu.pull-left {
+	float: none;
+}
+.dropdown-submenu.pull-left > .dropdown-menu {
+	left: -100%;
+	margin-left: 10px;
+	-webkit-border-radius: 6px 0 6px 6px;
+	-moz-border-radius: 6px 0 6px 6px;
+	border-radius: 6px 0 6px 6px;
+}

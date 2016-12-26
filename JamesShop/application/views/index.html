@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>James Shop</title>
+    <!-- Bootstrap -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="public/css/index.css" rel="stylesheet">
+    <script src="public/js/index.js"></script>
+</head>
+<body onload="changeTime()">
+<!-- 提示对话框 -->
+<div class="modal fade" id="myDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <!-- title -->
+                <h4 id="dialogTitle" class="modal-title">James Shop</h4>
+            </div>
+            <!-- content -->
+            <div class="modal-body" id="dialogContent">
+            </div>
+            <div class="modal-footer">
+                <a id="dialogConfirmA"><button type="button" class="btn btn-primary" id="dialogConfirm" >确定</button></a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- nav导航条 -->
+<?php include CUR_VIEW_PATH . $path; ?>
+<!-- 轮播 -->
+<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="public/image/1.jpg" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>欢迎来到James Shop</h1>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="public/image/2.jpg" alt="Second slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <!--<h1>欢迎来到James Shop</h1>-->
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="public/image/3.jpg" alt="Third slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <!--<h1>欢迎来到James Shop</h1>-->
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="public/image/4.jpg" alt="Forth slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <!--<h1>欢迎来到James Shop</h1>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+<!-- main -->
+<main id="mainPage" class="container-fluid">
+    <div class="row featurette">
+        <div class="col-md-1 col-xs-0"></div>
+        <div class="col-md-5 col-xs-6">
+            <div><h2 class="featurette-heading">Specially Coffee and Tea</h2></div>
+        </div>
+        <div class="col-md-5 col-xs-6">
+            <img class="featurette-image img-responsive" src="public/image/7.jpg" alt="Specially Coffee and Tea">
+        </div>
+        <div class="col-md-1 col-xs-0"></div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-1 col-xs-0"></div>
+        <div class="col-md-5 col-xs-6">
+            <img class="featurette-image img-responsive" src="public/image/8.jpg" alt="Specially Coffee and Tea">
+        </div>
+        <div class="col-md-5 col-xs-6">
+            <h2 class="featurette-heading">Bagels, Muffins, and Organic Snack</h2>
+            <p class="lead"></p>
+        </div>
+        <div class="col-md-1 col-xs-0"></div>
+    </div>
+    <hr class="featurette-divider">
+</main>
+
+<!--iframe用于局部刷新-->
+<!--<iframe src="<?php echo $src;?>" id="ifr" width="100%" height="400px" frameborder="1"></iframe>-->
+<iframe src="<?php echo $src;?>" id="ifr" width="0" height="0" frameborder="0"></iframe>
+<!-- footer -->
+<footer id="myFooter">
+    <address class="text-center">
+        <strong>
+            3688 NanHai Street<br>
+             ShenZhen University<br>
+        </strong>
+        <abbr title="Phone">P:</abbr>
+        1-359-038-6468
+        <br>
+    </address>
+    <p class="text-center">
+        <i>Copyright &copy; 2016 James Shop</i>
+        <br>
+        <a href="mailto:2013150391@szu.edu.cn">2013150391@szu.edu.cn</a>
+    </p>
+</footer>
+</body>
+</html>

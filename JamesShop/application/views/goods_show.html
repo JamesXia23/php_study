@@ -1,0 +1,25 @@
+<script type='text/javascript'>
+    var mainShowGoods = window.parent.document.getElementById('mainPage');
+    mainShowGoods.innerHTML =
+          "<div class='row'>"
+            +"<div class='col-sm-1 col-md-1'></div>"
+            +"<div class='col-sm-10 col-md-10'>"
+                +"<?php foreach($allGoods as $goods):?>"
+                +"<div class='col-sm-6 col-md-3'>"
+                    +"<div class='thumbnail'>"
+                        +"<img class='img-circle' src='<?php echo 'public/uploads/'.$goods['goods_galary'][0];?>' alt='...'>"
+                        +"<div class='caption'>"
+                            +"<a href='#' onclick=\"showPage('index.php?c=goods&a=showOne&goods_id=<?php echo $goods['goods_id'];?>')\"><h3 class='text-center' ><?php echo $goods['goods_name'];?></h3></a>"
+                            +"<!--<p class='text-center'></p>-->"
+                            +"<p class='text-center'>"
+                                +"<a href='index.php?c=cart&a=insert&goods_id=<?php echo $goods['goods_id'];?>' class='btn btn-primary btn-block' role='button' width=''>加入购物车</a>"
+                                +"<!--<a href='#' class='btn btn-default' role='button'>Details</a>-->"
+                            +"</p>"
+                        +"</div>"
+                    +"</div>"
+                +"</div>"
+                +"<?php endforeach;?>"
+            +"</div>"
+          +"<div class='col-sm-1 col-md-1'></div>"
+          +"</div>";
+</script>

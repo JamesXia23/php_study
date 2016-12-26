@@ -1,0 +1,41 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-sm">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <!-- title -->
+        <h4 id="myModalTitle" class="modal-title">James Shop</h4>
+      </div>
+      <!-- content -->
+      <div class="modal-body" id="myModalContent">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap -->
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  window.onload = countDown;
+  $('#myModal').modal('show');
+  var num = <?php echo $wait;?>;
+  function countDown() {
+    if (num > 0) {
+      var str = '';
+      str = "<?php echo $message;?>," + num + '秒钟后自动跳转';
+      document.getElementById('myModalContent').innerHTML = str;
+      num--;
+      setTimeout(countDown, 1000);
+    }
+    else {
+
+      $('#myModal').modal('hide');
+      location.href = "index.php?<?php echo $attr;?>";
+    }
+  }
+</script>
+
