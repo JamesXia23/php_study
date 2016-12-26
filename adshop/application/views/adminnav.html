@@ -1,0 +1,58 @@
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">AD Shop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
+                    管理中心 <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="javascript:;">商品管理</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="javascript:;" onclick="showPage('index.php?c=goods&a=list')">查看商品</a></li>
+                            <li><a tabindex="-1" href="javascript:;" onclick="showPage('index.php?c=goods&a=add')">添加商品</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="javascript:;">分类管理</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="javascript:;" onclick="showPage('index.php?c=category&a=index')">查看分类</a></li>
+                            <li><a tabindex="-1" href="javascript:;" onclick="showPage('index.php?c=category&a=add')">添加分类</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="javascript:;">品牌管理</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="javascript:;" onclick="showPage('index.php?c=brand&a=index')">查看品牌</a></li>
+                            <li><a tabindex="-1" href="javascript:;" onclick="showPage('index.php?c=brand&a=add')">添加品牌</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span id="more"><?php echo $username;?></span><span class="caret"></span></a>
+                    <ul id="moreMenu" class="dropdown-menu" role="menu">
+                        <li id="logoutList"><a id="navRegister" href="#" onclick="showDialog('您确定要登出吗?','index.php?c=login&a=logout')">登出</a></li>
+                        <li class="divider"></li>
+                        <li>
+                            <a id="time"></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

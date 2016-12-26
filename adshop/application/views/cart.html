@@ -1,0 +1,28 @@
+<script type="text/javascript">
+
+    var mainShowCart = window.parent.document.getElementById('mainPage');
+    mainShowCart.innerHTML =
+            "        <div class='row featurette'>"
+            +"            <div class='col-md-1'></div>"
+            +"            <div class='col-md-3'>"
+            +"                <h2 class='featurette-heading'>购物车</h2>"
+            +"            </div>"
+            +"        </div>"
+            +"        <div class='row'>"
+            +"            <div class='col-sm-2 col-xs-0'></div>"
+            +"            <div class='col-sm-8 col-xs-12'>"
+            +"    <?php foreach($carts as $cart):?>"
+                +"<div class='panel panel-primary'>"
+                +"            <div class='panel-heading'><?php echo $cart['goods_name'];?></div>"
+                +"    <div class='panel-body'>"
+
+                +"      <div class='col-sm-8 col-xs-12'><label>数量：</label><input id='<?php echo $cart['goods_id'];?>' type='number' value='<?php echo $cart['goods_number'];?>'></div>" +
+            "<div class='col-sm-4 col-xs-12 text-right'><span><a href='#' onclick=\"updateCart(<?php echo $cart['goods_id'];?>)\">修改</a></span>&nbsp;&nbsp;&nbsp;" +
+            "<span><a onclick=\"showDialog('确定要从购物车移出此项吗?','index.php?c=cart&a=delete&goods_id=<?php echo $cart['goods_id'];?>')\" href='#'>删除</a></span></div>"
+                +"    </div>"
+                +"    </div>"
+            +"    <?php endforeach;?>"
+            +"            </div>"
+            +"            <div class='col-sm-2 col-xs-0'></div>"
+            +"        </div>";
+</script>

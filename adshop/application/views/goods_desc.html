@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    var mainShowGoods = window.parent.document.getElementById('mainPage');
+    mainShowGoods.innerHTML =
+"<div class='row featurette'>"
++"    <div class='col-md-1 col-xs-0'></div>"
++"    <div class='col-md-5 col-xs-6'>"
++"        <div class='row'>"
++"            <div class='col-md-12 col-xs-12'><h2 class='featurette-heading text-center'><?php echo $goods['goods_name'];?></h2></div>"
++"            <div class='col-md-4 col-xs-6'><h4 class='featurette-heading text-center'>品牌:</h4></div><div class='col-md-8 col-xs-6'><h4 class='featurette-heading'><?php echo $brand['0']['brand_name'];?></h4></div>"
++"            <div class='col-md-4 col-xs-6'><h4 class='featurette-heading text-center'>分类:</h4></div><div class='col-md-8 col-xs-6'><h4 class='featurette-heading'><?php echo $category['0']['cat_name'];?></h4></div>"
++"            <div class='col-md-4 col-xs-6'><h4 class='featurette-heading text-center'>市场价格:</h4></div><div class='col-md-8 col-xs-6'><h4 class='featurette-heading'><del><?php echo $goods['market_price'];?></del></h4></div>"
++"            <div class='col-md-4 col-xs-6'><h4 class='featurette-heading text-center'>本店价格:</h4></div><div class='col-md-8 col-xs-6'><h4 class='featurette-heading'><?php echo $goods['shop_price'];?></h4></div>"
++"            <div class='col-md-4 col-xs-6'><h4 class='featurette-heading text-center'>商品数量:</h4></div><div class='col-md-8 col-xs-6'><h4 class='featurette-heading'><?php echo $goods['goods_number'];?></h4></div>"
++"              <?php foreach($attrs as $attr):?>"
++"                  <div class='col-md-4 col-xs-6'><h4 class='featurette-heading text-center'><?php echo $attr['attr_name']?>:</h4></div>"
++"                  <div class='col-md-8 col-xs-6'>"
++"                      <?php foreach($attr['attr_values'] as $value):?>"
+    +"                  <div class='radio'>"
+        +"                  <label>"
+        +"                  <input type='radio' name='optionsRadios' id='optionsRadios1' value='option1'>"
+        +"                  <?php echo $value;?>"
+        +"                  </label>"
+        +"              </div>"
++"                      <?php endforeach;?>"
++"                  </div>"
++"              <?php endforeach;?>"
++"            <div class='col-md-4 col-xs-6'></div><div class='col-md-8 col-xs-6'><a href='index.php?c=cart&a=insert&goods_id=<?php echo $goods['goods_id'];?>' class='btn btn-primary' role='button'>加入购物车</a></div>"
++"        </div>"
++"    </div>"
++"    <div class='col-md-5 col-xs-6'>"
++"        <img class='featurette-image img-responsive' src='public/uploads/<?php echo $galary[0]['img_url']?>'>"
++"    </div>"
++"    <div class='col-md-1 col-xs-0'></div>"
++"</div>";
+
+</script>

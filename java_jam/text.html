@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  var num = 5;
+  function countDown() {
+    if (num >= 0) {
+      var str = '';
+      str += '系统将在 ' + num + ' 秒钟后自动返回 <a href="http://">首页<\/a>';
+      document.getElementById('autoDir').innerHTML = str;
+      num--;
+      setTimeout(countDown, 1000);
+    }
+    else {
+      window.location.href = "index.html";
+    }
+  }
+  window.onload = countDown;
+
+</script>
+<div id="autoDir"></div>

@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    var parentRank = window.parent.document.getElementById('chooseParentRank');
+    parentRank.innerHTML = "分类级别<?php echo $cat_rank;?>";
+    var showParentCategory = window.parent.document.getElementById('categoryParentID');
+    showParentCategory.innerHTML =
+               "<option value='0'>选择分类级别</option>"
+             + " <?php foreach($categorys as $category) : ?>"
+             + "<option value='<?php echo $category['cat_id']?>'><?php echo $category['cat_name']?></option>"
+             + "<?php endforeach;?>";
+</script>
