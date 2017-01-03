@@ -191,7 +191,7 @@ function addAttr(){
     newNode.innerHTML =
          "<!-- 属性名称 -->"
         + "<div class='form-group row'>"
-        + "<label for='goodsAttrName' class='col-sm-3 col-xs-5 control-label'><a href='javascript:;' onclick='subAttr(this)'>[-]</a>属性名称:</label>"
+        + "<label for='goodsAttrName' class='col-sm-3 col-xs-5 control-label'><a href='javascript:;' onclick='subAttr(this)'>[-]</a>Attr name:</label>"
         + "<div class='col-sm-9 col-xs-12'>"
         + "<input type='type' id='goodsAttrName' name='attr_name[]' class='form-control' placeholder='please input your attrName'>"
         + "<span class='' id='goodsNameSpan'></span>"
@@ -200,7 +200,7 @@ function addAttr(){
         + "</div>"
         + "<!-- 属性值 -->"
         + "<div class='form-group row'>"
-        + "<label for='goodsName' class='col-sm-3 col-xs-5 control-label'>属性值:</label>"
+        + "<label for='goodsName' class='col-sm-3 col-xs-5 control-label'>Attr value:</label>"
         + "<div class='col-sm-9 col-xs-12'>"
         + "<input type='type' id='goodsAttrName' name='attr_value[]' class='form-control' placeholder='值之间使用英文逗号隔开'>"
         + "<span class='' id='goodsNameSpan'></span>"

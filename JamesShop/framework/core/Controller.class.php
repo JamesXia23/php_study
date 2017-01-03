@@ -15,7 +15,7 @@ class Controller {
 		//使用session来判断
 		if (!isset($_SESSION['user'])) {
 			$this->login_status = 2;
-			$this->login_username = '更多';
+			$this->login_username = 'More';
 		} elseif ($_SESSION['user']['is_admin'] == 1) {
 			$this->login_status = 0;
 			$this->login_username = $_SESSION['user']['user_name'];
